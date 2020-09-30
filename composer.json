@@ -1,0 +1,16 @@
+{
+    "name": "flavioheleno/php8-extensions",
+    "description": "A simple PHP8 extension builder based on Docker",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Flavio Heleno",
+            "email": "flaviohbatista@gmail.com"
+        }
+    ],
+    "require": {
+        "league/flysystem": "2.0.0-beta.3",
+        "symfony/process": "^5.1"
+    }
+}
