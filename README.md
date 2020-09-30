@@ -8,7 +8,7 @@ Content about extension's PHP 8 support:
 
 ## Dependencies
 
-As with any modern PHP project, dependencies are handled by [composer](https://getcomposer.org/).
+As in any modern PHP project, dependencies are handled by [composer](https://getcomposer.org/).
 
 To install dependencies, run `composer install`.
 

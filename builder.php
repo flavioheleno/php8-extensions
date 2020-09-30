@@ -25,7 +25,7 @@ $osSpecs = [
       'apt full-upgrade -y'
     ],
     'deps' => [
-      'cmd'  => 'apt install -y',
+      'cmd'  => 'apt install -y --no-install-recommends',
       'list' => ['git', 'autoconf', 'build-essential']
     ]
   ]
@@ -77,11 +77,13 @@ $extList = [
 
 $buildPath = '/tmp';
 
-/**********************************/
-/** DO NOT CHANGE THE CODE BELOW **/
-/** UNLESS YOU ARE SURE WHAT YOU **/
-/** ARE DOING.                   **/
-/**********************************/
+/************************************/
+/**                                **/
+/**  DO NOT CHANGE THE CODE BELOW  **/
+/**  UNLESS YOU ARE SURE ABOUT     **/
+/**  WHAT YOU ARE DOING. :-)       **/
+/**                                **/
+/************************************/
 
 $fs = new League\Flysystem\Filesystem(
   new League\Flysystem\Local\LocalFilesystemAdapter($buildPath)
