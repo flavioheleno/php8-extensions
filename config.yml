@@ -1,0 +1,63 @@
+osMatrix:
+  - alpine
+  - buster
+
+phpVerMatrix:
+  - 8.0.0beta4
+  - 8.0.0beta4-zts
+
+osSpecs:
+  alpine:
+    pre:
+      - apk update
+      - apk upgrade
+    deps:
+      cmd: apk add --no-cache
+      list:
+        - git
+        - autoconf
+        - build-base
+
+  buster:
+    pre:
+      - apk update
+      - apk upgrade
+    deps:
+      cmd: apt install -y --no-install-recommends
+      list:
+        - git
+        - autoconf
+        - build-essential
+
+extList:
+  decimal:
+    deps:
+      alpine:
+        - mpdecimal
+      buster:
+        - libmpdec-dev
+    make:
+      - git clone https://github.com/php-decimal/ext-decimal.git
+      - cd ext-decimal
+      - phpize
+      - ./configure --enable-decimal
+      - make
+      - make test
+  parallel:
+    deps:
+    make:
+      - git clone https://github.com/krakjoe/parallel.git
+      - cd parallel
+      - phpize
+      - ./configure --enable-parallel
+      - make
+      - make test
+  pcov:
+    deps:
+    make:
+      - git clone https://github.com/krakjoe/pcov.git
+      - cd pcov
+      - phpize
+      - ./configure --enable-pcov
+      - make
+      - make test
